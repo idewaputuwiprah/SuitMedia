@@ -1,2 +1,2 @@
 # NOTE
-Please don't forget to fill the table in the database first
+Please don't forget to fill the guest table in the database first
