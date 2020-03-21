@@ -41,6 +41,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return true;
     }
 
+    public Cursor queryAll(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME,null);
+        return res;
+    }
+
     public Cursor queryGuest(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from " + TABLE_NAME + " where name = ?", new String[] { name });

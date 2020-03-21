@@ -30,9 +30,9 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         myDB = new DatabaseHelper(this);
+        checkDatabase();
 
 //      ----- if the guest table is empty then uncomment the code below -----
-
 //        insertDefaultDatabase();
 
         text_name = findViewById(R.id.yourname);
@@ -53,6 +53,17 @@ public class HomePage extends AppCompatActivity {
 //        myDB.insertData("Dede", "2014-06-06");
 //        myDB.insertData("Joko", "2014-02-12");
 //    }
+
+    private void checkDatabase(){
+        Cursor res = myDB.queryAll();
+        if(res.getCount() == 0) {
+            myDB.insertData("Andi", "2014-01-01");
+            myDB.insertData("Budi", "2014-02-02");
+            myDB.insertData("Charlie", "2014-03-03");
+            myDB.insertData("Dede", "2014-06-06");
+            myDB.insertData("Joko", "2014-02-12");
+        }
+    }
 
     public void onEventClick(View view) {
         Intent intentEvent = new Intent(this, EventPage.class);

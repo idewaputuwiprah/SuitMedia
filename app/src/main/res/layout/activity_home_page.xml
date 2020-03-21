@@ -13,8 +13,8 @@
         android:id="@+id/textview_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama          :"
-        android:textSize="25dp"/>
+        android:text="@string/nama"
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/yourname"
@@ -22,17 +22,18 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/textview_nama"
         android:text=" "
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        android:layout_toEndOf="@+id/textview_nama" />
 
     <Button
         android:id="@+id/event"
         android:layout_marginTop="40dp"
         android:paddingBottom="7dp"
         android:layout_below="@+id/textview_nama"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_width="308dp"
+        android:layout_height="45dp"
         android:background="@drawable/rotate"
-        android:text="pilih event"
+        android:text="@string/pilih_event"
         android:textAllCaps="false"
         android:onClick="onEventClick"/>
 
@@ -41,10 +42,10 @@
         android:layout_marginTop="15dp"
         android:paddingBottom="7dp"
         android:layout_below="@+id/event"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_width="308dp"
+        android:layout_height="45dp"
         android:background="@drawable/rotate"
-        android:text="pilih guest"
+        android:text="@string/pilih_guest"
         android:textAllCaps="false"
         android:onClick="onGuestClick"/>
 
