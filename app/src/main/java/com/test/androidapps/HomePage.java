@@ -32,27 +32,22 @@ public class HomePage extends AppCompatActivity {
         myDB = new DatabaseHelper(this);
         checkDatabase();
 
-//      ----- if the guest table is empty then uncomment the code below -----
-//        insertDefaultDatabase();
-
         text_name = findViewById(R.id.yourname);
         bEvent = findViewById(R.id.event);
         bGuest = findViewById(R.id.guest);
 
         Intent intent = getIntent();
         String nama = " " + intent.getStringExtra("NAME");
+        String isPalindrome = intent.getStringExtra("PALINDROME");
         text_name.setText(nama);
+
+        openDialog(isPalindrome);
     }
 
-//    ----- uncomment this function below if your guest table is empty -----
-
-//    public void insertDefaultDatabase() {
-//        myDB.insertData("Andi", "2014-01-01");
-//        myDB.insertData("Budi", "2014-02-02");
-//        myDB.insertData("Charlie", "2014-03-03");
-//        myDB.insertData("Dede", "2014-06-06");
-//        myDB.insertData("Joko", "2014-02-12");
-//    }
+    private void openDialog(String isPalindrome){
+        PalindromeDialog alertPalindromeDialog = new PalindromeDialog(isPalindrome);
+        alertPalindromeDialog.show(getSupportFragmentManager(), "isPalindrome");
+    }
 
     private void checkDatabase(){
         Cursor res = myDB.queryAll();
@@ -85,19 +80,46 @@ public class HomePage extends AppCompatActivity {
         return false;
     }
 
-    private int convertBirthDate(String data){
+    private Date convertBirth(String data){
         Date birth;
-        int result;
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             birth = simpleDateFormat.parse(data);
-            result = Integer.parseInt(birth.getDate()+"");
-            return result;
+//            result = Integer.parseInt(birth.getDate()+"");
+            return birth;
         } catch (ParseException e) {
             e.printStackTrace();
-            return -1;
+            return birth = null;
         }
+    }
+
+    private int getDate(String data){
+        int result;
+        Date birth = convertBirth(data);
+        result = Integer.parseInt(birth.getDate()+"");
+        return result;
+    }
+
+    private String isPrime(String data){
+        Date birth = convertBirth(data);
+        int number = Integer.parseInt(birth.getMonth()+"") + 1;
+        boolean isprime = true;
+        String msg = null;
+        if(number > 1){
+            for(int i=2; i<=Math.sqrt(number); i++) {
+                if(number % i ==0 ) {
+                    isprime = false;
+                    msg = number+" is not prime";
+                    break;
+                }
+            }
+            if(isprime) msg = number+" is prime";
+        }
+        else {
+            msg = number+" is not prime";
+        }
+        return msg;
     }
 
     @Override
@@ -125,20 +147,21 @@ public class HomePage extends AppCompatActivity {
                     date = res.getString(2);
                 }
 
-                temp = convertBirthDate(date);
+                String msg = isPrime(date);
+                temp = getDate(date);
 
-                if (temp == 0) Toast.makeText(this, "No valid birthdate", Toast.LENGTH_SHORT).show();
+                if (temp == -1) Toast.makeText(this, "No valid birthdate", Toast.LENGTH_SHORT).show();
                 else {
                     if (checkEven(temp) && checkOdd(temp))
-                        Toast.makeText(this, "iOS", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "iOS, " + msg, Toast.LENGTH_LONG).show();
 
                     else if (checkEven(temp))
-                        Toast.makeText(this, "blackberry", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "blackberry, " + msg, Toast.LENGTH_LONG).show();
 
                     else if (checkOdd(temp))
-                        Toast.makeText(this, "android", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "android, " + msg, Toast.LENGTH_LONG).show();
 
-                    else Toast.makeText(this, "feature phone", Toast.LENGTH_SHORT).show();
+                    else Toast.makeText(this, "feature phone, " + msg, Toast.LENGTH_LONG).show();
                 }
             }
         }
