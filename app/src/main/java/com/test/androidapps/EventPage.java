@@ -114,4 +114,8 @@ public class EventPage extends AppCompatActivity {
         FragmentMaps fragment = new FragmentMaps(getList());
         fragmentManager.beginTransaction().replace(R.id.eventcontainer, fragment).commit();
     }
+
+    public void onBackEvent(View view) {
+        super.onBackPressed();
+    }
 }

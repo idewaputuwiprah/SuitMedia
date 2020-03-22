@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -93,5 +94,9 @@ public class GuestPage extends AppCompatActivity implements View.OnClickListener
                 sendGuestName(name);
                 break;
         }
+    }
+
+    public void onBackGuest(View view){
+        super.onBackPressed();
     }
 }

@@ -14,12 +14,13 @@
         android:background="@drawable/custom_bar">
 
         <Button
-            android:id="@+id/backbtn"
+            android:id="@+id/backbtnEvent"
             android:layout_width="27dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/btn_back_normal" />
+            android:background="@drawable/btn_back_normal"
+            android:onClick="onBackEvent"/>
 
 
         <TextView
@@ -30,7 +31,7 @@
             android:textColor="#178046"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/backbtn"
+            android:layout_toRightOf="@+id/backbtnEvent"
             android:layout_marginLeft="10dp"/>
 
         <Button

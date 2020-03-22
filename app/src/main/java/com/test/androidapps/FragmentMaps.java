@@ -27,6 +27,7 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap gMap;
     private ArrayList<EventModel> models;
+    Button backMaps;
     ViewPager viewPager;
     MapAdapter mapAdapter;
     View view;
@@ -50,6 +51,14 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
         mapView = view.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
+
+        backMaps = view.findViewById(R.id.backbtnMap);
+        backMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
