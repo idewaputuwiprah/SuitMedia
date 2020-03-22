@@ -4,17 +4,24 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:elevation="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-        
+        android:layout_height="180dp"
+        android:background="@drawable/bg_list"
+        android:paddingTop="1px"
+        android:paddingBottom="1px"
+        android:paddingRight="15px"
+        android:paddingLeft="10dp">
+
         <ImageView
             android:id="@+id/imageIv"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher"/>
 
         <TextView
@@ -22,27 +29,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Title"
-            android:textSize="22sp"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
             android:textColor="#000"
             android:textStyle="bold"
-            android:layout_toRightOf="@+id/imageIv"
-            android:layout_toEndOf="@+id/imageIv"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"/>
+            android:layout_alignParentLeft="true" />
 
         <TextView
             android:id="@+id/dateTv"
             android:text="Date"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/imageIv"
-            android:layout_toEndOf="@+id/imageIv"
+            android:textSize="13sp"
+            android:textColor="#c2b43a"
             android:layout_below="@+id/titleTv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"/>
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/lineartag"
+            android:layout_below="@+id/dateTv"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/relativedesc"
+            android:layout_toLeftOf="@+id/imageIv"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/relativedesc"
+            android:layout_alignParentBottom="true"
+            android:layout_width="240dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toLeftOf="@+id/imageIv"
+            android:layout_alignParentLeft="true"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/descriptionTv"
+                android:text="Description"
+                android:textColor="@android:color/darker_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:justificationMode="inter_word"/>
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:width="299.9dp" android:height="40dp">
-        <shape android:shape="rectangle">
-            <solid android:color="#000000"/>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#00ffffff"/>
+            <stroke android:color="#fff" android:width="3dp"/>
         </shape>
     </item>
 
     <item
-        android:top="20px"
-        android:left="20px"
-        android:drawable="@drawable/custom_textbar">
-
+        android:drawable="@drawable/btn_add_photo">
     </item>
 
 </layer-list>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Test</string>
     <string name="masukan_nama">masukan nama</string>
-    <string name="next">NEXT</string>
+    <string name="next">SELESAI</string>
     <string name="nama">Nama :</string>
     <string name="pilih_event">pilih event</string>
     <string name="pilih_guest">pilih guest</string>

@@ -49,6 +49,8 @@ public class EventPage extends AppCompatActivity {
         model.setDate("17 Sep 2020");
         model.setImage(R.drawable.npc);
         model.setColor("#ed313b");
+        model.setTags(new String[]{"#nutricia", "#highlight F3"});
+        model.setDescription("This is version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean gravida nibh vel velit auctor aliquet....");
         models.add(model);
 
         model = new EventModel();
@@ -56,6 +58,8 @@ public class EventPage extends AppCompatActivity {
         model.setDate("17 Sep 2020");
         model.setImage(R.drawable.nlc);
         model.setColor("#ffb321");
+        model.setTags(new String[]{"#nutricia"});
+        model.setDescription("This is version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean gravida nibh vel velit auctor aliquet....");
         models.add(model);
 
         model = new EventModel();
@@ -63,6 +67,8 @@ public class EventPage extends AppCompatActivity {
         model.setDate("20 Okt 2020");
         model.setImage(R.drawable.nst);
         model.setColor("#47ab6c");
+        model.setTags(new String[]{"#nutricia", "#highlight F3", "#event"});
+        model.setDescription("This is version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean gravida nibh vel velit auctor aliquet....");
         models.add(model);
 
         model = new EventModel();
@@ -70,6 +76,8 @@ public class EventPage extends AppCompatActivity {
         model.setDate("25 Okt 2020");
         model.setImage(R.drawable.reeva);
         model.setColor("#02547d");
+        model.setTags(new String[]{"#nutricia", "#highlight F3"});
+        model.setDescription("This is version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean gravida nibh vel velit auctor aliquet....");
         models.add(model);
 
         return models;

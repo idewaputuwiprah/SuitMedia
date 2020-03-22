@@ -4,6 +4,6 @@
     android:toDegrees="180"
     android:pivotX="50%"
     android:pivotY="50%"
-    android:drawable="@drawable/custom_button">
+    android:drawable="@drawable/custom_button2">
 
 </rotate>
