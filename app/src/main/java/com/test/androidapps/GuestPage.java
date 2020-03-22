@@ -2,21 +2,37 @@ package com.test.androidapps;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class GuestPage extends AppCompatActivity implements View.OnClickListener{
 
     private CardView card1, card2, card3, card4, card5;
     private TextView text1, text2, text3, text4, text5;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private GridLayout gridLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_page);
+
+        gridLayout = findViewById(R.id.gridlayout);
+
+        swipeRefreshLayout = findViewById(R.id.swiperefreshitem);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         bindCard();
         bindText();

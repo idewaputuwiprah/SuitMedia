@@ -5,4 +5,7 @@
     <string name="nama">Nama :</string>
     <string name="pilih_event">pilih event</string>
     <string name="pilih_guest">pilih guest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

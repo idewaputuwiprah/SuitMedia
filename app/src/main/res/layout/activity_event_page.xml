@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventcontainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.test.androidapps.EventPage">
@@ -39,7 +40,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_newarticle_normal" />
+            android:background="@drawable/btn_newarticle_normal"
+            android:onClick="onClickAddArticle"/>
 
     </RelativeLayout>
 

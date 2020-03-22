@@ -3,8 +3,25 @@ package com.test.androidapps;
 public class EventModel {
 
     private String title, date, color, description;
+    private double longitude, lat;
     private int image;
     private String[] tags;
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
 
     public String getColor() {
         return color;
